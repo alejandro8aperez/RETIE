@@ -1,15 +1,15 @@
 {
-  "name": "RETIE 100 · Índice Maestro de Diagramas",
+  "name": "RETIE 100 · Curso gratis de diagramas de instalaciones eléctricas",
   "short_name": "RETIE 100",
-  "description": "Repositorio de los 100 diagramas del curso RETIE: Reglamento Técnico de Instalaciones Eléctricas.",
+  "description": "Curso gratis del RETIE: 100 diagramas de instalaciones eléctricas en 10 bloques.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f8fafc",
-  "theme_color": "#4f46e5",
+  "background_color": "#020617",
+  "theme_color": "#f59e0b",
   "lang": "es",
   "icons": [
     {
-      "src": "https://base44.com/logo_v2.svg",
+      "src": "/RETIE/logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"

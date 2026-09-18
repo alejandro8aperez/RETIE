@@ -8,10 +8,13 @@ export default function GridCell({ diagrama }) {
 
   if (!publicado) {
     return (
-      <div className="group relative flex aspect-square items-center justify-center border border-slate-800 bg-slate-900/40">
-        <span className="font-mono text-[13px] text-slate-600">{numero}</span>
-        <span className="pointer-events-none absolute inset-x-0 bottom-1 text-center font-mono text-[7px] tracking-[0.15em] text-slate-700">
+      <div className="group relative flex aspect-square items-center justify-center border border-slate-800 bg-slate-900/60 transition-colors hover:border-amber-500/60 hover:bg-slate-900">
+        <span className="font-mono text-[13px] text-slate-500">{numero}</span>
+        <span className="pointer-events-none absolute inset-x-0 bottom-1 text-center font-mono text-[7px] tracking-[0.15em] text-slate-600">
           PRÓXIMAMENTE
+        </span>
+        <span className="pointer-events-none absolute inset-0 hidden items-end bg-slate-950/95 px-1.5 py-1 font-mono text-[9px] leading-tight text-amber-400 group-hover:flex sm:overflow-hidden">
+          <span className="line-clamp-3">{diagrama.titulo}</span>
         </span>
       </div>
     );

@@ -6,7 +6,7 @@ import ProgressCurrent from "@/components/ProgressCurrent";
 import MasterGrid from "@/components/MasterGrid";
 import TerminalMenu from "@/components/TerminalMenu";
 import SystemFooter from "@/components/SystemFooter";
-import { BLOQUES, TOTAL_TEMAS, codigoTema, fechaCorta } from "@/lib/retie";
+import { BLOQUES, TOTAL_TEMAS, codigoTema, fechaCorta, FACEBOOK_URL } from "@/lib/retie";
 
 export default function Home() {
   const [diagramas, setDiagramas] = useState([]);
@@ -44,18 +44,29 @@ export default function Home() {
           RETIE 100
         </h1>
         <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-slate-400">
-          Índice maestro de los 100 diagramas del Reglamento Técnico de Instalaciones
-          Eléctricas. Cada tema se publica día por medio en la comunidad y queda archivado
-          aquí con su diagrama y las notas del curso.
+          El curso gratuito de los 100 diagramas del Reglamento Técnico de Instalaciones
+          Eléctricas. Un tema nuevo se publica día por medio en la comunidad, junto con su
+          diagrama, las notas del profesor y todo el material del curso.
         </p>
-        <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 font-mono text-[12px] tracking-wide text-slate-500">
-          <span>
-            PUBLICADOS:{" "}
-            <span className="text-amber-500">{String(publicados.length).padStart(2, "0")}</span>
-            /{TOTAL_TEMAS}
-          </span>
-          <span>BLOQUES: {BLOQUES.length}</span>
-          <span>CADENCIA: DÍA POR MEDIO</span>
+
+        <div className="mt-8 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+          <div className="flex flex-wrap gap-x-8 gap-y-2 font-mono text-[12px] tracking-wide text-slate-500">
+            <span>
+              PUBLICADOS:{" "}
+              <span className="text-amber-500">{String(publicados.length).padStart(2, "0")}</span>
+              /{TOTAL_TEMAS}
+            </span>
+            <span>BLOQUES: {BLOQUES.length}</span>
+            <span>CADENCIA: DÍA POR MEDIO</span>
+          </div>
+          <a
+            href={FACEBOOK_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block border border-amber-500 bg-amber-500 px-5 py-2.5 font-mono text-[12px] tracking-widest text-slate-950 transition-colors hover:bg-transparent hover:text-amber-500"
+          >
+            ÚNETE AL CURSO GRATIS →
+          </a>
         </div>
       </header>
 
@@ -117,7 +128,7 @@ export default function Home() {
 
         <section className="mt-16">
           <h2 className="mb-4 border-b border-slate-800 pb-2 font-heading text-lg font-bold text-slate-100">
-            Bloques del curso
+            Temario del curso · 10 bloques
           </h2>
           <div className="grid gap-2 sm:grid-cols-2">
             {BLOQUES.map((bloque) => {
@@ -127,23 +138,45 @@ export default function Home() {
               const listos = delBloque.filter((d) => d.publicado && d.imagen_url).length;
               const avance = Math.round((listos / (bloque.hasta - bloque.desde + 1)) * 100);
               return (
-                <div key={bloque.nombre} className="border border-slate-800 bg-slate-900/30 p-4">
-                  <p className="font-mono text-[11px] tracking-widest text-amber-500">
-                    {String(bloque.desde).padStart(2, "0")}–{String(bloque.hasta).padStart(2, "0")}
-                  </p>
-                  <p className="mt-1 font-heading text-[15px] font-medium text-slate-200">
-                    {bloque.nombre}
-                  </p>
-                  <div className="mt-3 h-1 w-full bg-slate-800">
-                    <div className="h-full bg-amber-500" style={{ width: `${avance}%` }} />
-                  </div>
-                  <p className="mt-2 font-mono text-[11px] text-slate-500">
-                    {listos}/{bloque.hasta - bloque.desde + 1} DIAGRAMAS
-                  </p>
-                </div>
+                <details
+                  key={bloque.nombre}
+                  className="group border border-slate-800 bg-slate-900/30 p-4"
+                >
+                  <summary className="cursor-pointer list-none">
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <p className="font-mono text-[11px] tracking-widest text-amber-500">
+                          BLOQUE {String(bloque.desde).padStart(2, "0")}–{String(bloque.hasta).padStart(2, "0")} · {bloque.nombre}
+                        </p>
+                        <div className="mt-3 h-1 w-full bg-slate-800">
+                          <div className="h-full bg-amber-500" style={{ width: `${avance}%` }} />
+                        </div>
+                        <p className="mt-2 font-mono text-[11px] text-slate-500">
+                          {listos}/{bloque.hasta - bloque.desde + 1} DIAGRAMAS PUBLICADOS
+                        </p>
+                      </div>
+                      <span className="font-mono text-[11px] text-slate-500 transition-transform group-open:rotate-90">
+                        ▸
+                      </span>
+                    </div>
+                  </summary>
+                  <ul className="mt-4 space-y-1.5 border-t border-slate-800 pt-4">
+                    {delBloque.map((d) => (
+                      <li key={d.numero} className="flex items-baseline gap-3 text-[13px]">
+                        <span className="w-14 shrink-0 font-mono text-[10px] text-slate-600">
+                          {codigoTema(d.numero)}
+                        </span>
+                        <span className="text-slate-300">{d.titulo}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
               );
             })}
           </div>
+          <p className="mt-3 font-mono text-[11px] tracking-widest text-slate-600">
+            HAZ CLIC EN CADA BLOQUE PARA VER EL TEMARIO COMPLETO
+          </p>
         </section>
       </main>
 
