@@ -134,7 +134,18 @@ const crearRegistro = (entrada) => ({
   fecha_publicacion: "",
 });
 
-const SIMIENTE = CATALOGO.map(crearRegistro);
+const fechaPorCalendario = (numero) => {
+  const d = new Date();
+  d.setDate(d.getDate() - (TOTAL_TEMAS - numero) * 2);
+  return d.toISOString().slice(0, 10);
+};
+
+const SIMIENTE = CATALOGO.map((entrada) => ({
+  ...crearRegistro(entrada),
+  imagen_url: `${import.meta.env.BASE_URL}diagramas/${codigoTema(entrada.numero)}.svg`,
+  publicado: true,
+  fecha_publicacion: fechaPorCalendario(entrada.numero),
+}));
 
 let registros = [...SIMIENTE];
 

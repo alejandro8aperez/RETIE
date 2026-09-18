@@ -45,8 +45,9 @@ export default function Home() {
         </h1>
         <p className="mt-5 max-w-2xl text-[17px] leading-relaxed text-slate-400">
           El curso gratuito de los 100 diagramas del Reglamento Técnico de Instalaciones
-          Eléctricas. Un tema nuevo se publica día por medio en la comunidad, junto con su
-          diagrama, las notas del profesor y todo el material del curso.
+          Eléctricas. Los 100 temas están disponibles con su diagrama, las notas del
+          profesor y todo el material del curso. Súmate a la comunidad, donde cada tema
+          se comparte día por medio.
         </p>
 
         <div className="mt-8 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
