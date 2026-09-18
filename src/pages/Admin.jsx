@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { base44 } from "@/api/base44Client";
+import { listarDiagramas, actualizarDiagrama, eliminarDiagrama } from "@/lib/diagramas";
 import { Image } from "@/components/ui/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,7 +19,7 @@ export default function Admin() {
 
   const cargar = async () => {
     setCargando(true);
-    const data = await base44.entities.Diagrama.list("numero", 200);
+    const data = await listarDiagramas();
     setDiagramas(data);
     setCargando(false);
   };
@@ -40,7 +40,7 @@ export default function Admin() {
 
   const alternarPublicacion = async (diagrama) => {
     const publicar = !diagrama.publicado;
-    await base44.entities.Diagrama.update(diagrama.id, {
+    await actualizarDiagrama(diagrama.id, {
       publicado: publicar,
       fecha_publicacion: publicar
         ? new Date().toISOString().slice(0, 10)
@@ -51,7 +51,7 @@ export default function Admin() {
 
   const eliminar = async (diagrama) => {
     if (!window.confirm(`¿Eliminar el tema ${codigoTema(diagrama.numero)}?`)) return;
-    await base44.entities.Diagrama.delete(diagrama.id);
+    await eliminarDiagrama(diagrama.id);
     cargar();
   };
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { base44 } from "@/api/base44Client";
+import { listarDiagramas } from "@/lib/diagramas";
 import { Image } from "@/components/ui/image";
 import ProgressCurrent from "@/components/ProgressCurrent";
 import MasterGrid from "@/components/MasterGrid";
@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     let activo = true;
-    base44.entities.Diagrama.list("numero", 200)
+    listarDiagramas()
       .then((data) => {
         if (!activo) return;
         setDiagramas(data);

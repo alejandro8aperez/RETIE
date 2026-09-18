@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { base44 } from "@/api/base44Client";
+import { crearDiagrama, actualizarDiagrama } from "@/lib/diagramas";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -27,10 +27,15 @@ export default function DiagramaForm({ diagrama, onSaved, onCancel }) {
     setSubiendo(true);
     setError("");
     try {
-      const { file_url } = await base44.integrations.Core.UploadPublicFile({ file: archivo });
-      setForm((previo) => ({ ...previo, imagen_url: file_url }));
+      const url = await new Promise((resolver, rechazar) => {
+        const lector = new FileReader();
+        lector.onload = () => resolver(lector.result);
+        lector.onerror = () => rechazar(new Error("lectura"));
+        lector.readAsDataURL(archivo);
+      });
+      setForm((previo) => ({ ...previo, imagen_url: url }));
     } catch (e) {
-      setError("No se pudo subir la imagen. Intenta de nuevo.");
+      setError("No se pudo leer la imagen. Intenta de nuevo.");
     } finally {
       setSubiendo(false);
     }
@@ -57,9 +62,9 @@ export default function DiagramaForm({ diagrama, onSaved, onCancel }) {
     };
     try {
       if (diagrama?.id) {
-        await base44.entities.Diagrama.update(diagrama.id, datos);
+        await actualizarDiagrama(diagrama.id, datos);
       } else {
-        await base44.entities.Diagrama.create(datos);
+        await crearDiagrama(datos);
       }
       onSaved();
     } catch (e) {
@@ -196,6 +201,15 @@ export default function DiagramaForm({ diagrama, onSaved, onCancel }) {
               </div>
             )}
           </div>
+          <p className="mt-2 font-mono text-[10px] text-slate-600">
+            O PEGA LA URL DE LA IMAGEN:
+          </p>
+          <Input
+            value={form.imagen_url}
+            onChange={(e) => setForm({ ...form, imagen_url: e.target.value })}
+            placeholder="https://..."
+            className="mt-1 border-slate-700 bg-slate-950 text-slate-100"
+          />
         </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-6 border-t border-slate-800 pt-5">

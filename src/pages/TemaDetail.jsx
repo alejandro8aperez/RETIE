@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { base44 } from "@/api/base44Client";
+import { listarDiagramas } from "@/lib/diagramas";
 import { Image } from "@/components/ui/image";
 import ProgressCurrent from "@/components/ProgressCurrent";
 import TerminalMenu from "@/components/TerminalMenu";
@@ -18,7 +18,7 @@ export default function TemaDetail() {
 
   useEffect(() => {
     let activo = true;
-    base44.entities.Diagrama.list("numero", 200)
+    listarDiagramas()
       .then((data) => {
         if (!activo) return;
         setDiagramas(data);
