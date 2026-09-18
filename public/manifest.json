@@ -1,0 +1,18 @@
+{
+  "name": "RETIE 100 · Índice Maestro de Diagramas",
+  "short_name": "RETIE 100",
+  "description": "Repositorio de los 100 diagramas del curso RETIE: Reglamento Técnico de Instalaciones Eléctricas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#4f46e5",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "https://base44.com/logo_v2.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

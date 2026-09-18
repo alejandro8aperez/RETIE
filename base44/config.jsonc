@@ -1,0 +1,9 @@
+{
+  "$schema": "https://docs.base44.com/base44/config.schema.json",
+  "app": {
+    "id": "6aad1a9c46076767471abb66"
+  },
+  "site": {
+    "serveCommand": "npm run dev"
+  }
+}
