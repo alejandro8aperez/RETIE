@@ -6,7 +6,7 @@ import ProgressCurrent from "@/components/ProgressCurrent";
 import TerminalMenu from "@/components/TerminalMenu";
 import SystemFooter from "@/components/SystemFooter";
 import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
-import { TOTAL_TEMAS, codigoTema, fechaCorta } from "@/lib/retie";
+import { TOTAL_TEMAS, codigoTema, fechaCorta, desgloseTema } from "@/lib/retie";
 
 export default function TemaDetail() {
   const { numero } = useParams();
@@ -32,7 +32,10 @@ export default function TemaDetail() {
 
   const tema = diagramas.find((d) => d.numero === numeroActual);
   const publicados = diagramas.filter((d) => d.publicado && d.imagen_url).length;
-  const disponible = !!tema?.publicado && !!tema?.imagen_url;
+  const desglose =
+    tema && disponible
+      ? desgloseTema(numeroActual, tema.titulo, tema.bloque, tema.resumen)
+      : null;
 
   const irA = (destino) => {
     if (destino < 1 || destino > TOTAL_TEMAS) return;
@@ -89,6 +92,58 @@ export default function TemaDetail() {
                   día que corresponda dentro del calendario del curso.
                 </p>
               </div>
+            )}
+
+            {desglose && (
+              <section className="mt-8 border border-slate-800 bg-slate-900/40 p-5">
+                <p className="font-mono text-[11px] tracking-[0.25em] text-amber-500">
+                  DESGLOSE DEL TEMA A ESTUDIAR
+                </p>
+                <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-slate-300">
+                  {desglose.objetivo}
+                </p>
+
+                <div className="mt-5 border-t border-slate-800 pt-4">
+                  <p className="font-mono text-[11px] tracking-[0.25em] text-slate-500">
+                    BASE NORMATIVA
+                  </p>
+                  <p className="mt-2 font-mono text-[12px] tracking-wide text-amber-500">
+                    {desglose.base_normativa}
+                  </p>
+                </div>
+
+                <div className="mt-5 border-t border-slate-800 pt-4">
+                  <p className="font-mono text-[11px] tracking-[0.25em] text-slate-500">
+                    TEORÍA A DOMINAR · {desglose.teoria.length} PUNTOS
+                  </p>
+                  <ul className="mt-3 space-y-2">
+                    {desglose.teoria.map((punto, i) => (
+                      <li key={i} className="flex gap-3 text-[14px] leading-relaxed text-slate-400">
+                        <span className="font-mono text-[11px] text-amber-500">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span>{punto}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-5 border-t border-slate-800 pt-4">
+                  <p className="font-mono text-[11px] tracking-[0.25em] text-slate-500">
+                    PASOS A SEGUIR · {desglose.pasos.length} PASOS
+                  </p>
+                  <ol className="mt-3 space-y-2">
+                    {desglose.pasos.map((paso, i) => (
+                      <li key={i} className="flex gap-3 text-[14px] leading-relaxed text-slate-400">
+                        <span className="font-mono text-[11px] text-amber-500">
+                          P{String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span>{paso}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              </section>
             )}
           </div>
 
