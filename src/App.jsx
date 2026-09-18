@@ -10,6 +10,8 @@ import Home from '@/pages/Home';
 import TemaDetail from '@/pages/TemaDetail';
 import Admin from '@/pages/Admin';
 import MemoriaCalculoMovelty from '@/pages/MemoriaCalculoMovelty';
+
+const routerBasename = typeof __ROUTER_BASENAME__ !== 'undefined' ? __ROUTER_BASENAME__ : '/';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -53,7 +55,7 @@ function App() {
   return (
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>
-        <Router>
+        <Router basename={routerBasename}>
           <ScrollToTop />
           <AuthenticatedApp />
         </Router>

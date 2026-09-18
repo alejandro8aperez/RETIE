@@ -3,7 +3,13 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
+const base = process.env.BASE_PATH || "/";
+
 export default defineConfig({
+  base,
+  define: {
+    __ROUTER_BASENAME__: JSON.stringify(base),
+  },
   plugins: [
     base44({
       // Support for legacy code that imports the base44 SDK with @/integrations, @/entities, etc.
