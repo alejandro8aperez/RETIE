@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FACEBOOK_URL } from "@/lib/retie";
 
 const OPCIONES = [
   { etiqueta: "> INICIO", to: "/" },
@@ -50,14 +49,7 @@ export default function TerminalMenu() {
               {opcion.etiqueta}
             </Link>
           ))}
-          <a
-            href={FACEBOOK_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="text-slate-300 transition-colors hover:text-amber-500"
-          >
-            &gt; FACEBOOK_COMUNIDAD
-          </a>
+          
         </nav>
 
         <p className="mt-10 border-t border-slate-800 pt-6 font-mono text-[11px] leading-relaxed text-slate-600">

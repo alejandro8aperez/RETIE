@@ -8,7 +8,6 @@ export const RETIE_VIGENTE = {
   vigente_desde: "27 de mayo de 2024",
 };
 
-export const FACEBOOK_URL = "https://www.facebook.com";
 
 export const codigoTema = (numero) => `RETIE-${String(numero).padStart(3, "0")}`;
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { FACEBOOK_URL } from "@/lib/retie";
 
 export default function SystemFooter({ publicados, total }) {
   return (
@@ -11,14 +10,7 @@ export default function SystemFooter({ publicados, total }) {
         <span className="text-center">
           RETIE · REGLAMENTO TÉCNICO DE INSTALACIONES ELÉCTRICAS
         </span>
-        <a
-          href={FACEBOOK_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="transition-colors hover:text-amber-400"
-        >
-          COMUNIDAD FACEBOOK →
-        </a>
+        
       </div>
     </footer>
   );

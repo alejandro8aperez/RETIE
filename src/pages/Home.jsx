@@ -6,7 +6,7 @@ import ProgressCurrent from "@/components/ProgressCurrent";
 import MasterGrid from "@/components/MasterGrid";
 import TerminalMenu from "@/components/TerminalMenu";
 import SystemFooter from "@/components/SystemFooter";
-import { BLOQUES, TOTAL_TEMAS, codigoTema, fechaCorta, FACEBOOK_URL } from "@/lib/retie";
+import { BLOQUES, TOTAL_TEMAS, codigoTema, fechaCorta,  } from "@/lib/retie";
 
 export default function Home() {
   const [diagramas, setDiagramas] = useState([]);
@@ -59,16 +59,7 @@ export default function Home() {
             </span>
             <span>BLOQUES: {BLOQUES.length}</span>
             <span>CADENCIA: DÍA POR MEDIO</span>
-          </div>
-          <a
-            href={FACEBOOK_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block border border-amber-500 bg-amber-500 px-5 py-2.5 font-mono text-[12px] tracking-widest text-slate-950 transition-colors hover:bg-transparent hover:text-amber-500"
-          >
-            ÚNETE AL CURSO GRATIS →
-          </a>
-        </div>
+          </div></div>
       </header>
 
       {ultimo && (
