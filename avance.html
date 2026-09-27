@@ -25,7 +25,7 @@
       .lesson-list{display:grid;gap:8px;margin:16px 0}
       .lesson-item{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:14px}
       .lesson-item .lnum{font-family:'DM Mono',monospace;color:var(--muted);min-width:28px;font-size:12px}
-      .lesson-item .ltitle{flex:1}.lesson-item .ldate{color:var(--muted);font-size:12px;font-family:'DM Mono',monospace}
+      .lesson-item .ltitle{flex:1}
       .lesson-item.done{border-left:3px solid var(--blue)}
       .lesson-item.pending{opacity:.55;border-left:3px solid #cbd5e1}
       .filter-bar{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap}
@@ -39,11 +39,6 @@
       .img-modal{position:fixed;inset:0;z-index:100;background:rgba(6,38,76,.85);display:flex;align-items:center;justify-content:center;padding:20px}
       .img-modal img{max-width:100%;max-height:80vh;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.3)}
       .img-modal .close-btn{position:absolute;top:16px;right:20px;color:#fff;font-size:32px;background:none;border:none;cursor:pointer}
-      .timeline{position:relative;padding-left:24px;border-left:2px solid var(--line);margin:16px 0}
-      .timeline-item{position:relative;padding:6px 0 16px 16px}
-      .timeline-item::before{content:'';position:absolute;left:-29px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
-      .timeline-item .tdate{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
-      .timeline-item .ttitle{font-weight:700;font-size:14px}
       .section-title{font-size:22px;font-weight:800;margin:36px 0 12px;letter-spacing:-.5px}
       .section-title:first-child{margin-top:0}
     </style>
@@ -92,11 +87,6 @@
       <section class="wrap" style="padding-bottom:36px">
         <h2 class="section-title">Temas publicados</h2>
         <div class="img-grid" id="img-grid"></div>
-      </section>
-
-      <section class="wrap" style="padding-bottom:36px">
-        <h2 class="section-title">Línea de tiempo de publicaciones</h2>
-        <div class="timeline" id="timeline"></div>
       </section>
 
       <section class="wrap" style="padding-bottom:60px">
@@ -254,14 +244,6 @@
         ig.innerHTML += `<div class="img-card" onclick="document.getElementById('img-modal-img').src='${d.imagen}';document.getElementById('img-modal').style.display='flex'"><img src="${d.imagen}" alt="${d.titulo}" loading="lazy" /><div class="img-label">RETIE-${d.numero}<br>${d.titulo}</div></div>`;
       });
 
-      // Timeline
-      const tl = document.getElementById('timeline');
-      done.sort((a,b) => new Date(a.fecha) - new Date(b.fecha)).forEach(d => {
-        const fd = new Date(d.fecha + 'T00:00:00');
-        const fmt = fd.toLocaleDateString('es-CO', {day:'numeric', month:'long', year:'numeric'});
-        tl.innerHTML += `<div class="timeline-item"><span class="tdate">${fmt}</span><div class="ttitle">RETIE-${d.numero}: ${d.titulo}</div></div>`;
-      });
-
       // Filters + list
       let filterBlock = 'TODOS';
       function renderList() {
@@ -271,8 +253,7 @@
         fl.innerHTML = filtered.map(d => {
           const cls = d.publicado ? 'done' : 'pending';
           const icon = d.publicado ? '✓' : '○';
-          const date = d.publicado ? `<span class="ldate">${d.fecha}</span>` : '<span class="ldate" style="color:#cbd5e1">Pendiente</span>';
-          return `<div class="lesson-item ${cls}"><span class="lnum">${icon}</span><span class="ltitle">RETIE-${d.numero} · ${d.titulo}</span>${date}</div>`;
+          return `<div class="lesson-item ${cls}"><span class="lnum">${icon}</span><span class="ltitle">RETIE-${d.numero} · ${d.titulo}</span></div>`;
         }).join('');
 
         const allBlocks = ['TODOS', ...Object.keys(blocks).sort()];
