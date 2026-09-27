@@ -1,0 +1,55 @@
+RETIE - Imagenes reales exportadas de Base44 (media.base44.com)
+Fuente del listado: C:\Postgres\RETIE\Diagrama_export.csv
+Formato: JPG (el servidor entrega JPEG aunque la URL termine en .png)
+Nota: solo los temas 001-050 estan publicados con imagen en Base44; 051-100 aun sin imagen.
+
+RETIE-001 | Objeto y campo de aplicación del RETIE | Fundamentos y disposiciones generales | publicada: 2026-09-14
+RETIE-002 | Estructura del reglamento: capítulos y artículos | Fundamentos y disposiciones generales | publicada: 2026-09-16
+RETIE-003 | Definiciones y glosario técnico (parte 1) | Fundamentos y disposiciones generales | publicada: 2026-09-18
+RETIE-004 | Definiciones y glosario técnico (parte 2) | Fundamentos y disposiciones generales | publicada: 2026-09-20
+RETIE-005 | Siglas y unidades empleadas en el reglamento | Fundamentos y disposiciones generales | publicada: 2026-09-22
+RETIE-006 | Clasificación de las instalaciones eléctricas | Fundamentos y disposiciones generales | publicada: 2026-09-24
+RETIE-007 | Instalaciones cubiertas y excluidas del RETIE | Fundamentos y disposiciones generales | publicada: 2026-09-26
+RETIE-008 | Responsabilidades del propietario de la instalación | Fundamentos y disposiciones generales | publicada: 2026-09-28
+RETIE-009 | Articulación con la NTC 2050 y las normas técnicas | Fundamentos y disposiciones generales | publicada: 2026-09-30
+RETIE-010 | Jerarquía normativa y reglamentación técnica | Fundamentos y disposiciones generales | publicada: 2026-10-02
+RETIE-011 | Requisitos de seguridad eléctrica | Requisitos técnicos esenciales | publicada: 2026-10-04
+RETIE-012 | Protección contra contacto directo | Requisitos técnicos esenciales | publicada: 2026-10-06
+RETIE-013 | Protección contra contacto indirecto | Requisitos técnicos esenciales | publicada: 2026-10-08
+RETIE-014 | Protección contra sobrecorrientes | Requisitos técnicos esenciales | publicada: 2026-10-10
+RETIE-015 | Protección contra sobretensiones | Requisitos técnicos esenciales | publicada: 2026-10-12
+RETIE-016 | Protección contra arcos eléctricos | Requisitos técnicos esenciales | publicada: 2026-10-14
+RETIE-017 | Confiabilidad y continuidad del servicio | Requisitos técnicos esenciales | publicada: 2026-10-16
+RETIE-018 | Requisitos de eficiencia energética | Requisitos técnicos esenciales | publicada: 2026-10-18
+RETIE-019 | Requisitos ambientales y compatibilidad electromagnética | Requisitos técnicos esenciales | publicada: 2026-10-20
+RETIE-020 | Señalización, demarcación y barreras de seguridad | Requisitos técnicos esenciales | publicada: 2026-10-22
+RETIE-021 | Componentes de una acometida | Acometidas y suministro | publicada: 2026-10-24
+RETIE-022 | Acometidas aéreas | Acometidas y suministro | publicada: 2026-10-26
+RETIE-023 | Acometidas subterráneas | Acometidas y suministro | publicada: 2026-10-28
+RETIE-024 | Acometidas de media tensión | Acometidas y suministro | publicada: 2026-10-30
+RETIE-025 | Punto de conexión y sistema de medición | Acometidas y suministro | publicada: 2026-11-01
+RETIE-026 | Cajas de inspección y registros | Acometidas y suministro | publicada: 2026-11-03
+RETIE-027 | Alturas mínimas y distancias de seguridad | Acometidas y suministro | publicada: 2026-11-05
+RETIE-028 | Distancias a edificaciones, vías y andenes | Acometidas y suministro | publicada: 2026-11-07
+RETIE-029 | Cruzamientos y paralelismos con otras redes | Acometidas y suministro | publicada: 2026-11-09
+RETIE-030 | Acometidas en edificaciones multifamiliares | Acometidas y suministro | publicada: 2026-11-11
+RETIE-031 | Objetivo del sistema de puesta a tierra | Puesta a tierra y protecciones | publicada: 2026-11-13
+RETIE-032 | Tipos de electrodos de puesta a tierra | Puesta a tierra y protecciones | publicada: 2026-11-15
+RETIE-033 | Cálculo de la resistencia de puesta a tierra | Puesta a tierra y protecciones | publicada: 2026-11-17
+RETIE-034 | Conductores del sistema de puesta a tierra | Puesta a tierra y protecciones | publicada: 2026-11-19
+RETIE-035 | Barraje principal de puesta a tierra | Puesta a tierra y protecciones | publicada: 2026-11-21
+RETIE-036 | Puesta a tierra de equipos y masas | Puesta a tierra y protecciones | publicada: 2026-11-23
+RETIE-037 | Unión equipotencial principal | Puesta a tierra y protecciones | publicada: 2026-11-25
+RETIE-038 | Unión equipotencial suplementaria | Puesta a tierra y protecciones | publicada: 2026-11-27
+RETIE-039 | Sistema de protección contra rayos | Puesta a tierra y protecciones | publicada: 2026-11-29
+RETIE-040 | Dispositivos de protección contra sobretensiones (DPS) | Puesta a tierra y protecciones | publicada: 2026-12-01
+RETIE-041 | Conductores y cables: tipos y clases | Conductores, canalizaciones y tableros | publicada: 2026-12-03
+RETIE-042 | Ampacidad y factores de corrección | Conductores, canalizaciones y tableros | publicada: 2026-12-05
+RETIE-043 | Colores de identificación de conductores | Conductores, canalizaciones y tableros | publicada: 2026-12-07
+RETIE-044 | Empalmes y terminaciones | Conductores, canalizaciones y tableros | publicada: 2026-12-09
+RETIE-045 | Canalizaciones eléctricas: clasificación | Conductores, canalizaciones y tableros | publicada: 2026-12-11
+RETIE-046 | Tubería conduit y accesorios | Conductores, canalizaciones y tableros | publicada: 2026-12-13
+RETIE-047 | Bandejas portacables y ductos | Conductores, canalizaciones y tableros | publicada: 2026-12-15
+RETIE-048 | Cajas de paso, salidas y dispositivos | Conductores, canalizaciones y tableros | publicada: 2026-12-17
+RETIE-049 | Tableros de distribución | Conductores, canalizaciones y tableros | publicada: 2026-12-19
+RETIE-050 | Tablero general y centro de carga | Conductores, canalizaciones y tableros | publicada: 2026-12-21

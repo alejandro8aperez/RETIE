@@ -1,0 +1,41 @@
+RETIE - Selección de imágenes MÁS IMPORTANTES para los temas del RETIE
+Fuente: exportación real de Base44 (media.base44.com) - C:\Postgres\RETIE\Diagrama_export.csv
+Carpeta original con las 50 publicadas: C:\Postgres\RETIE\RETIE_imagenes_base44
+
+Fundamentos
+- RETIE-001  Objeto y campo de aplicación del RETIE         (qué se regula y qué se excluye / exige certificación)
+- RETIE-002  Estructura del reglamento: capítulos y artículos (mapa para ubicar cualquier requisito por artículo)
+
+Requisitos técnicos esenciales (seguridad)
+- RETIE-011  Requisitos de seguridad eléctrica
+- RETIE-012  Protección contra contacto directo
+- RETIE-013  Protección contra contacto indirecto
+- RETIE-014  Protección contra sobrecorrientes
+- RETIE-015  Protección contra sobretensiones
+- RETIE-016  Protección contra arcos eléctricos
+- RETIE-020  Señalización, demarcación y barreras de seguridad
+
+Acometidas y suministro
+- RETIE-023  Acometidas subterráneas
+- RETIE-027  Alturas mínimas y distancias de seguridad
+
+Puesta a tierra y protecciones (núcleo normativo)
+- RETIE-031  Objetivo del sistema de puesta a tierra
+- RETIE-032  Tipos de electrodos de puesta a tierra
+- RETIE-033  Cálculo de la resistencia de puesta a tierra
+- RETIE-034  Conductores del sistema de puesta a tierra
+- RETIE-035  Barraje principal de puesta a tierra
+- RETIE-036  Puesta a tierra de equipos y masas
+- RETIE-037  Unión equipotencial principal
+- RETIE-038  Unión equipotencial suplementaria
+- RETIE-039  Sistema de protección contra rayos
+- RETIE-040  Dispositivos de protección contra sobretensiones (DPS)
+
+Conductores, canalizaciones y tableros
+- RETIE-041  Conductores y cables: tipos y clases
+- RETIE-042  Ampacidad y factores de corrección
+- RETIE-043  Colores de identificación de conductores
+- RETIE-049  Tableros de distribución
+- RETIE-050  Tablero general y centro de carga
+
+Nota: los temas 051-100 aún no tienen imagen publicada en Base44 (imagen_url vacío en el CSV).

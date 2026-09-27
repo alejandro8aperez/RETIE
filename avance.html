@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="RETIE Aula — Avance de estudio: 50 de 100 temas publicados." />
+    <title>RETIE Aula | Mi Avance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:28px 0}
+      .stat-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;text-align:center}
+      .stat-card b{font-size:28px;display:block;color:var(--blue)}
+      .stat-card small{color:var(--muted);font-size:12px;font-weight:600}
+      .progress-bar{height:14px;background:#e2e8f0;border-radius:7px;overflow:hidden;margin:8px 0}
+      .progress-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--yellow),var(--orange));border-radius:7px;transition:width .6s ease}
+      .block-list{display:grid;gap:10px;margin:20px 0}
+      .block-item{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px}
+      .block-item .blk-name{flex:1;font-weight:700;font-size:14px}
+      .block-item .blk-count{color:var(--muted);font-size:13px;font-family:'DM Mono',monospace}
+      .block-item .blk-bar{flex:0 0 120px;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+      .block-item .blk-bar i{display:block;height:100%;background:var(--blue);border-radius:4px}
+      .lesson-list{display:grid;gap:8px;margin:16px 0}
+      .lesson-item{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:14px}
+      .lesson-item .lnum{font-family:'DM Mono',monospace;color:var(--muted);min-width:28px;font-size:12px}
+      .lesson-item .ltitle{flex:1}.lesson-item .ldate{color:var(--muted);font-size:12px;font-family:'DM Mono',monospace}
+      .lesson-item.done{border-left:3px solid var(--blue)}
+      .lesson-item.pending{opacity:.55;border-left:3px solid #cbd5e1}
+      .filter-bar{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap}
+      .filter-btn{padding:7px 14px;border:1px solid var(--line);border-radius:20px;background:#fff;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;color:var(--muted)}
+      .filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+      .img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin:16px 0}
+      .img-card{border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff;cursor:pointer;transition:transform .2s,box-shadow .2s}
+      .img-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(6,38,76,.1)}
+      .img-card img{width:100%;height:120px;object-fit:cover;display:block}
+      .img-card .img-label{padding:8px 10px;font-size:12px;font-weight:600;line-height:1.3}
+      .img-modal{position:fixed;inset:0;z-index:100;background:rgba(6,38,76,.85);display:flex;align-items:center;justify-content:center;padding:20px}
+      .img-modal img{max-width:100%;max-height:80vh;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.3)}
+      .img-modal .close-btn{position:absolute;top:16px;right:20px;color:#fff;font-size:32px;background:none;border:none;cursor:pointer}
+      .timeline{position:relative;padding-left:24px;border-left:2px solid var(--line);margin:16px 0}
+      .timeline-item{position:relative;padding:6px 0 16px 16px}
+      .timeline-item::before{content:'';position:absolute;left:-29px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+      .timeline-item .tdate{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)}
+      .timeline-item .ttitle{font-weight:700;font-size:14px}
+      .section-title{font-size:22px;font-weight:800;margin:36px 0 12px;letter-spacing:-.5px}
+      .section-title:first-child{margin-top:0}
+    </style>
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="RETIE Aula, ir al inicio"><span class="bolt">ϟ</span><span>RETIE<small>AULA TÉCNICA</small></span></a>
+      <nav aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a class="active" href="#avance">Avance</a>
+        <a href="index.html#recursos">Recursos</a>
+        <a href="index.html#evaluacion">Evaluación</a>
+      </nav>
+      <button class="menu-button" aria-label="Abrir navegación">☰</button>
+      <button class="profile" aria-label="Perfil del estudiante">AM</button>
+    </header>
+
+    <main>
+      <section class="wrap" style="padding-top:44px;padding-bottom:28px">
+        <p class="eyebrow"><span></span> PROGRESO DE ESTUDIO</p>
+        <h1 style="font-size:34px;font-weight:800;letter-spacing:-1px;margin:4px 0">Mi avance RETIE</h1>
+        <p style="color:var(--muted);max-width:560px">Temas publicados en mi camino para dominar el Reglamento Técnico de Instalaciones Eléctricas.</p>
+
+        <div class="stats-grid">
+          <div class="stat-card"><b id="stat-total">—</b><small>TOTAL TEMAS</small></div>
+          <div class="stat-card"><b id="stat-done">—</b><small>PUBLICADOS</small></div>
+          <div class="stat-card"><b id="stat-pending">—</b><small>PENDIENTES</small></div>
+          <div class="stat-card"><b id="stat-pct">—</b><small>AVANCE</small></div>
+        </div>
+
+        <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 24px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-weight:700;font-size:14px">Progreso general</span>
+            <span id="pct-label" style="font-family:'DM Mono',monospace;font-size:13px;color:var(--blue);font-weight:700"></span>
+          </div>
+          <div class="progress-bar"><i id="main-bar"></i></div>
+        </div>
+      </section>
+
+      <section class="wrap" style="padding-bottom:36px">
+        <h2 class="section-title">Avance por bloque</h2>
+        <div class="block-list" id="block-list"></div>
+      </section>
+
+      <section class="wrap" style="padding-bottom:36px">
+        <h2 class="section-title">Temas publicados (con imagen Base44)</h2>
+        <div class="img-grid" id="img-grid"></div>
+      </section>
+
+      <section class="wrap" style="padding-bottom:36px">
+        <h2 class="section-title">Línea de tiempo de publicaciones</h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="wrap" style="padding-bottom:60px">
+        <h2 class="section-title">Todos los temas</h2>
+        <div class="filter-bar" id="filter-bar"></div>
+        <div class="lesson-list" id="lesson-list"></div>
+      </section>
+    </main>
+
+    <footer style="padding:32px 0;border-top:1px solid var(--line);background:#fff">
+      <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <a class="brand" href="index.html"><span class="bolt">ϟ</span><span>RETIE<small>AULA TÉCNICA</small></span></a>
+        <p style="color:var(--muted);font-size:13px">Avance de estudio RETIE 2026</p>
+        <span style="font-size:12px;color:var(--muted)">© 2026 · Semana 01</span>
+      </div>
+    </footer>
+
+    <div id="img-modal" class="img-modal" style="display:none" onclick="this.style.display='none'">
+      <button class="close-btn" onclick="document.getElementById('img-modal').style.display='none'">×</button>
+      <img id="img-modal-img" src="" alt="" />
+    </div>
+
+    <script>
+      const DATA = [
+        {numero:"001",codigo:"RETIE-001",titulo:"Objeto y campo de aplicación del RETIE",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-09-14",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/1afe1170c_generated_image.png"},
+        {numero:"002",codigo:"RETIE-002",titulo:"Estructura del reglamento: capítulos y artículos",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-09-16",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/e5c46d6ff_generated_image.png"},
+        {numero:"003",codigo:"RETIE-003",titulo:"Definiciones y glosario técnico (parte 1)",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-09-18",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/28d7aaded_generated_image.png"},
+        {numero:"004",codigo:"RETIE-004",titulo:"Definiciones y glosario técnico (parte 2)",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-09-20",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/e7734eb46_generated_image.png"},
+        {numero:"005",codigo:"RETIE-005",titulo:"Siglas y unidades empleadas en el reglamento",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-09-22",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/cf6fbbbb2_generated_image.png"},
+        {numero:"006",codigo:"RETIE-006",titulo:"Clasificación de las instalaciones eléctricas",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-09-24",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/9a71bb606_generated_image.png"},
+        {numero:"007",codigo:"RETIE-007",titulo:"Instalaciones cubiertas y excluidas del RETIE",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-09-26",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/0020f2612_generated_image.png"},
+        {numero:"008",codigo:"RETIE-008",titulo:"Responsabilidades del propietario de la instalación",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-09-28",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/f4349659e_generated_image.png"},
+        {numero:"009",codigo:"RETIE-009",titulo:"Articulación con la NTC 2050 y las normas técnicas",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-09-30",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/025f71571_generated_image.png"},
+        {numero:"010",codigo:"RETIE-010",titulo:"Jerarquía normativa y reglamentación técnica",bloque:"Fundamentos y disposiciones generales",publicado:true,fecha:"2026-10-02",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/ca1183cf5_generated_image.png"},
+        {numero:"011",codigo:"RETIE-011",titulo:"Requisitos de seguridad eléctrica",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-04",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/40db56ca9_generated_image.png"},
+        {numero:"012",codigo:"RETIE-012",titulo:"Protección contra contacto directo",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-06",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/245285f09_generated_image.png"},
+        {numero:"013",codigo:"RETIE-013",titulo:"Protección contra contacto indirecto",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-08",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/8323f3e54_generated_image.png"},
+        {numero:"014",codigo:"RETIE-014",titulo:"Protección contra sobrecorrientes",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-10",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/2b42a9193_generated_image.png"},
+        {numero:"015",codigo:"RETIE-015",titulo:"Protección contra sobretensiones",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-12",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/9849ce393_generated_image.png"},
+        {numero:"016",codigo:"RETIE-016",titulo:"Protección contra arcos eléctricos",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-14",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/751669b0f_generated_image.png"},
+        {numero:"017",codigo:"RETIE-017",titulo:"Confiabilidad y continuidad del servicio",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-16",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/3d58df765_generated_image.png"},
+        {numero:"018",codigo:"RETIE-018",titulo:"Requisitos de eficiencia energética",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-18",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/7e4d65bcb_generated_image.png"},
+        {numero:"019",codigo:"RETIE-019",titulo:"Requisitos ambientales y compatibilidad electromagnética",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-20",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/0e803d6cb_generated_image.png"},
+        {numero:"020",codigo:"RETIE-020",titulo:"Señalización, demarcación y barreras de seguridad",bloque:"Requisitos técnicos esenciales",publicado:true,fecha:"2026-10-22",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/c68ce461a_generated_image.png"},
+        {numero:"021",codigo:"RETIE-021",titulo:"Componentes de una acometida",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-10-24",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/c68ce461a_generated_image.png"},
+        {numero:"022",codigo:"RETIE-022",titulo:"Acometidas aéreas",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-10-26",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/1b84abf3b_generated_image.png"},
+        {numero:"023",codigo:"RETIE-023",titulo:"Acometidas subterráneas",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-10-28",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/ad7e15588_generated_image.png"},
+        {numero:"024",codigo:"RETIE-024",titulo:"Acometidas de media tensión",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-10-30",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/2a0e6adc1_generated_image.png"},
+        {numero:"025",codigo:"RETIE-025",titulo:"Punto de conexión y sistema de medición",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-11-01",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/babd72d8f_generated_image.png"},
+        {numero:"026",codigo:"RETIE-026",titulo:"Cajas de inspección y registros",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-11-03",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/374cab212_generated_image.png"},
+        {numero:"027",codigo:"RETIE-027",titulo:"Alturas mínimas y distancias de seguridad",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-11-05",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/c55f37d54_generated_image.png"},
+        {numero:"028",codigo:"RETIE-028",titulo:"Distancias a edificaciones, vías y andenes",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-11-07",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/2d612d17c_generated_image.png"},
+        {numero:"029",codigo:"RETIE-029",titulo:"Cruzamientos y paralelismos con otras redes",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-11-09",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/45f92c7a3_generated_image.png"},
+        {numero:"030",codigo:"RETIE-030",titulo:"Acometidas en edificaciones multifamiliares",bloque:"Acometidas y suministro",publicado:true,fecha:"2026-11-11",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/5843e921a_generated_image.png"},
+        {numero:"031",codigo:"RETIE-031",titulo:"Objetivo del sistema de puesta a tierra",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-11-13",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/90e1320ab_generated_image.png"},
+        {numero:"032",codigo:"RETIE-032",titulo:"Tipos de electrodos de puesta a tierra",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-11-15",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/1326edb4b_generated_image.png"},
+        {numero:"033",codigo:"RETIE-033",titulo:"Cálculo de la resistencia de puesta a tierra",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-11-17",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/a5971e75d_generated_image.png"},
+        {numero:"034",codigo:"RETIE-034",titulo:"Conductores del sistema de puesta a tierra",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-11-19",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/186210b69_generated_image.png"},
+        {numero:"035",codigo:"RETIE-035",titulo:"Barraje principal de puesta a tierra",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-11-21",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/f02204b0a_generated_image.png"},
+        {numero:"036",codigo:"RETIE-036",titulo:"Puesta a tierra de equipos y masas",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-11-23",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/d67081a6f_generated_image.png"},
+        {numero:"037",codigo:"RETIE-037",titulo:"Unión equipotencial principal",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-11-25",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/5818456af_generated_image.png"},
+        {numero:"038",codigo:"RETIE-038",titulo:"Unión equipotencial suplementaria",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-11-27",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/f46628848_generated_image.png"},
+        {numero:"039",codigo:"RETIE-039",titulo:"Sistema de protección contra rayos",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-11-29",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/13456944c_generated_image.png"},
+        {numero:"040",codigo:"RETIE-040",titulo:"Dispositivos de protección contra sobretensiones (DPS)",bloque:"Puesta a tierra y protecciones",publicado:true,fecha:"2026-12-01",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/6605bc259_generated_image.png"},
+        {numero:"041",codigo:"RETIE-041",titulo:"Conductores y cables: tipos y clases",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-03",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/686e17446_generated_image.png"},
+        {numero:"042",codigo:"RETIE-042",titulo:"Ampacidad y factores de corrección",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-05",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/7e119d0b5_generated_image.png"},
+        {numero:"043",codigo:"RETIE-043",titulo:"Colores de identificación de conductores",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-07",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/5f3250708_generated_image.png"},
+        {numero:"044",codigo:"RETIE-044",titulo:"Empalmes y terminaciones",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-09",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/2620c877e_generated_image.png"},
+        {numero:"045",codigo:"RETIE-045",titulo:"Canalizaciones eléctricas: clasificación",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-11",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/cca36a416_generated_image.png"},
+        {numero:"046",codigo:"RETIE-046",titulo:"Tubería conduit y accesorios",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-13",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/04afd0ba2_generated_image.png"},
+        {numero:"047",codigo:"RETIE-047",titulo:"Bandejas portacables y ductos",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-15",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/554ebfd5a_generated_image.png"},
+        {numero:"048",codigo:"RETIE-048",titulo:"Cajas de paso, salidas y dispositivos",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-17",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/e9bf85c58_generated_image.png"},
+        {numero:"049",codigo:"RETIE-049",titulo:"Tableros de distribución",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-19",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/f73610fea_generated_image.png"},
+        {numero:"050",codigo:"RETIE-050",titulo:"Tablero general y centro de carga",bloque:"Conductores, canalizaciones y tableros",publicado:true,fecha:"2026-12-21",imagen:"https://media.base44.com/images/public/6aad1a9c46076767471abb66/59d62b092_generated_image.png"},
+        {numero:"051",codigo:"RETIE-051",titulo:"Productos eléctricos sujetos a certificación",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"052",codigo:"RETIE-052",titulo:"Interruptores automáticos de protección",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"053",codigo:"RETIE-053",titulo:"Interruptores de falla a tierra (GFCI)",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"054",codigo:"RETIE-054",titulo:"Fusibles y seccionadores",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"055",codigo:"RETIE-055",titulo:"Contactores y relés de protección",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"056",codigo:"RETIE-056",titulo:"Transformadores de distribución",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"057",codigo:"RETIE-057",titulo:"Subestaciones de media tensión",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"058",codigo:"RETIE-058",titulo:"Motores eléctricos y arrancadores",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"059",codigo:"RETIE-059",titulo:"Bancos de condensadores y factor de potencia",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"060",codigo:"RETIE-060",titulo:"Equipos de medida y monitoreo",bloque:"Equipos y productos eléctricos",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"061",codigo:"RETIE-061",titulo:"Instalaciones en hospitales y clínicas",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"062",codigo:"RETIE-062",titulo:"Instalaciones en piscinas y fuentes",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"063",codigo:"RETIE-063",titulo:"Instalaciones en zonas húmedas y mojadas",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"064",codigo:"RETIE-064",titulo:"Instalaciones en atmósferas explosivas",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"065",codigo:"RETIE-065",titulo:"Instalaciones en ganadería y establos",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"066",codigo:"RETIE-066",titulo:"Instalaciones en lugares de reunión pública",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"067",codigo:"RETIE-067",titulo:"Instalaciones temporales y de obra",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"068",codigo:"RETIE-068",titulo:"Instalaciones en altura y zonas de difícil acceso",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"069",codigo:"RETIE-069",titulo:"Instalaciones en ambientes corrosivos",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"070",codigo:"RETIE-070",titulo:"Instalaciones en vivienda de interés social",bloque:"Áreas y condiciones especiales",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"071",codigo:"RETIE-071",titulo:"Generación distribuida",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"072",codigo:"RETIE-072",titulo:"Sistemas fotovoltaicos residenciales",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"073",codigo:"RETIE-073",titulo:"Sistemas fotovoltaicos de gran escala",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"074",codigo:"RETIE-074",titulo:"Inversores y protecciones de sistemas solares",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"075",codigo:"RETIE-075",titulo:"Almacenamiento con baterías (BESS)",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"076",codigo:"RETIE-076",titulo:"Generadores de emergencia",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"077",codigo:"RETIE-077",titulo:"Transferencia automática de carga",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"078",codigo:"RETIE-078",titulo:"Estaciones de carga para vehículos eléctricos",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"079",codigo:"RETIE-079",titulo:"Cargadores AC y DC: requisitos técnicos",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"080",codigo:"RETIE-080",titulo:"Integración de renovables a la red",bloque:"Generación, renovables y movilidad eléctrica",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"081",codigo:"RETIE-081",titulo:"Diseño de instalaciones eléctricas",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"082",codigo:"RETIE-082",titulo:"Memorias de cálculo",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"083",codigo:"RETIE-083",titulo:"Planos y diagramas unifilares",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"084",codigo:"RETIE-084",titulo:"Construcción y montaje de la instalación",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"085",codigo:"RETIE-085",titulo:"Supervisión técnica de obra",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"086",codigo:"RETIE-086",titulo:"Operación de instalaciones eléctricas",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"087",codigo:"RETIE-087",titulo:"Mantenimiento preventivo",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"088",codigo:"RETIE-088",titulo:"Mantenimiento predictivo y termografía",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"089",codigo:"RETIE-089",titulo:"Trabajo seguro en instalaciones energizadas",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"090",codigo:"RETIE-090",titulo:"Programa de seguridad eléctrica",bloque:"Procesos: diseño, construcción y mantenimiento",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"091",codigo:"RETIE-091",titulo:"Tipos de inspección eléctrica",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"092",codigo:"RETIE-092",titulo:"Inspección visual",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"093",codigo:"RETIE-093",titulo:"Inspección con instrumentos",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"094",codigo:"RETIE-094",titulo:"Protocolos de prueba y medición",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"095",codigo:"RETIE-095",titulo:"Criterios de aceptación y no conformidades",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"096",codigo:"RETIE-096",titulo:"Certificación RETIE de productos",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"097",codigo:"RETIE-097",titulo:"Certificado de conformidad de la instalación",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"098",codigo:"RETIE-098",titulo:"Declaración de cumplimiento y responsable técnico",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"099",codigo:"RETIE-099",titulo:"Documentación técnica del proyecto",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""},
+        {numero:"100",codigo:"RETIE-100",titulo:"Vigilancia, control y sanciones",bloque:"Inspección, certificación y documentación",publicado:false,fecha:"",imagen:"",resumen:""}
+      ];
+
+      const done = DATA.filter(d => d.publicado);
+      const pend = DATA.filter(d => !d.publicado);
+      const pct = Math.round(done.length / DATA.length * 100);
+
+      document.getElementById('stat-total').textContent = DATA.length;
+      document.getElementById('stat-done').textContent = done.length;
+      document.getElementById('stat-pending').textContent = pend.length;
+      document.getElementById('stat-pct').textContent = pct + '%';
+      document.getElementById('pct-label').textContent = pct + '% completado';
+      document.getElementById('main-bar').style.width = pct + '%';
+
+      // Blocks
+      const blocks = {};
+      DATA.forEach(d => {
+        if (!blocks[d.bloque]) blocks[d.bloque] = {total:0, pub:0};
+        blocks[d.bloque].total++;
+        if (d.publicado) blocks[d.bloque].pub++;
+      });
+      const bl = document.getElementById('block-list');
+      Object.keys(blocks).sort().forEach(k => {
+        const v = blocks[k];
+        const p = Math.round(v.pub / v.total * 100);
+        bl.innerHTML += `<div class="block-item"><span class="blk-name">${k}</span><span class="blk-count">${v.pub}/${v.total}</span><div class="blk-bar"><i style="width:${p}%"></i></div></div>`;
+      });
+
+      // Images grid
+      const ig = document.getElementById('img-grid');
+      done.filter(d => d.imagen).forEach(d => {
+        ig.innerHTML += `<div class="img-card" onclick="document.getElementById('img-modal-img').src='${d.imagen}';document.getElementById('img-modal').style.display='flex'"><img src="${d.imagen}" alt="${d.titulo}" loading="lazy" /><div class="img-label">RETIE-${d.numero}<br>${d.titulo}</div></div>`;
+      });
+
+      // Timeline
+      const tl = document.getElementById('timeline');
+      done.sort((a,b) => new Date(a.fecha) - new Date(b.fecha)).forEach(d => {
+        const fd = new Date(d.fecha + 'T00:00:00');
+        const fmt = fd.toLocaleDateString('es-CO', {day:'numeric', month:'long', year:'numeric'});
+        tl.innerHTML += `<div class="timeline-item"><span class="tdate">${fmt}</span><div class="ttitle">RETIE-${d.numero}: ${d.titulo}</div></div>`;
+      });
+
+      // Filters + list
+      let filterBlock = 'TODOS';
+      function renderList() {
+        const fl = document.getElementById('lesson-list');
+        const fb = document.getElementById('filter-bar');
+        const filtered = filterBlock === 'TODOS' ? DATA : DATA.filter(d => d.bloque === filterBlock);
+        fl.innerHTML = filtered.map(d => {
+          const cls = d.publicado ? 'done' : 'pending';
+          const icon = d.publicado ? '✓' : '○';
+          const date = d.publicado ? `<span class="ldate">${d.fecha}</span>` : '<span class="ldate" style="color:#cbd5e1">Pendiente</span>';
+          return `<div class="lesson-item ${cls}"><span class="lnum">${icon}</span><span class="ltitle">RETIE-${d.numero} · ${d.titulo}</span>${date}</div>`;
+        }).join('');
+
+        const allBlocks = ['TODOS', ...Object.keys(blocks).sort()];
+        fb.innerHTML = allBlocks.map(b => {
+          const active = b === filterBlock ? 'active' : '';
+          return `<button class="filter-btn ${active}" onclick="setFilter('${b}')">${b === 'TODOS' ? 'Todos' : b} ${b==='TODOS'?'':`(${blocks[b].pub}/${blocks[b].total})`}</button>`;
+        }).join('');
+      }
+      window.setFilter = function(b) { filterBlock = b; renderList(); };
+      renderList();
+    </script>
+  </body>
+</html>
