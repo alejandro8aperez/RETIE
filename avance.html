@@ -1,9 +1,9 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="RETIE Aula â€” Avance de estudio: 50 de 100 temas publicados." />
+    <meta name="description" content="RETIE Aula — Avance de estudio: 50 de 100 temas publicados." />
     <title>RETIE Aula | Mi Avance</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,7 +53,7 @@
         <a href="index.html#recursos">Recursos</a>
         <a href="index.html#evaluacion">Evaluación</a>
       </nav>
-      <button class="menu-button" aria-label="Abrir navegación">â˜°</button>
+      <button class="menu-button" aria-label="Abrir navegación">☰</button>
       <button class="profile" aria-label="Perfil del estudiante">AM</button>
     </header>
 
@@ -64,10 +64,10 @@
         <p style="color:var(--muted);max-width:560px">Temas publicados en mi camino para dominar el Reglamento Técnico de Instalaciones Eléctricas.</p>
 
         <div class="stats-grid">
-          <div class="stat-card"><b id="stat-total">â€”</b><small>TOTAL TEMAS</small></div>
-          <div class="stat-card"><b id="stat-done">â€”</b><small>PUBLICADOS</small></div>
-          <div class="stat-card"><b id="stat-pending">â€”</b><small>PENDIENTES</small></div>
-          <div class="stat-card"><b id="stat-pct">â€”</b><small>AVANCE</small></div>
+          <div class="stat-card"><b id="stat-total">—</b><small>TOTAL TEMAS</small></div>
+          <div class="stat-card"><b id="stat-done">—</b><small>PUBLICADOS</small></div>
+          <div class="stat-card"><b id="stat-pending">—</b><small>PENDIENTES</small></div>
+          <div class="stat-card"><b id="stat-pct">—</b><small>AVANCE</small></div>
         </div>
 
         <div style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 24px">
@@ -100,7 +100,7 @@
       <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
         <a class="brand" href="index.html"><img src="LOGOTIPO%20DE%20RETIE%20LEARNING.png" alt="RETIE Learning" style="height:176px;width:auto"></a>
         <p style="color:var(--muted);font-size:13px">Avance de estudio RETIE 2026</p>
-        <span style="font-size:12px;color:var(--muted)">Â© 2026 Â· Semana 01</span>
+        <span style="font-size:12px;color:var(--muted)">© 2026 · Semana 01</span>
       </div>
     </footer>
 
@@ -252,8 +252,8 @@ const pct = done.length ? Math.round(done.length / DATA.length * 100) : 0;
         const filtered = filterBlock === 'TODOS' ? DATA : DATA.filter(d => d.bloque === filterBlock);
         fl.innerHTML = filtered.map(d => {
           const cls = d.publicado ? 'done' : 'pending';
-          const icon = d.publicado ? 'âœ“' : 'â—‹';
-          return `<div class="lesson-item ${cls}"><span class="lnum">${icon}</span><span class="ltitle">RETIE-${d.numero} Â· ${d.titulo}</span></div>`;
+          const icon = d.publicado ? '✓' : '○';
+          return `<div class="lesson-item ${cls}"><span class="lnum">${icon}</span><span class="ltitle">RETIE-${d.numero} · ${d.titulo}</span></div>`;
         }).join('');
 
         const allBlocks = ['TODOS', ...Object.keys(blocks).sort()];
