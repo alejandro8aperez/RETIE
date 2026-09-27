@@ -17,6 +17,11 @@ document.querySelectorAll('.resource').forEach(resource => resource.addEventList
 }));
 document.querySelectorAll('.close-modal').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
 document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); }));
+mediaModal.addEventListener('close', () => {
+  const video = mediaModal.querySelector('video');
+  if (video) { video.pause(); video.src = ''; video.load(); }
+  document.querySelector('#modal-content').innerHTML = '';
+});
 const questions = [
   { q: '¿Qué describe mejor un peligro?', a: ['La probabilidad de un accidente', 'Una fuente o situación con potencial de causar daño', 'Una medida de protección'], correct: 1, note: 'Correcto. El peligro existe por sí mismo, aun sin una persona expuesta.' },
   { q: 'El riesgo depende principalmente de…', a: ['La probabilidad y la severidad de las consecuencias', 'El color de la señalización', 'La edad de la instalación'], correct: 0, note: 'Correcto. Riesgo = probabilidad × consecuencias.' },
