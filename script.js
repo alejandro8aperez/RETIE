@@ -2,7 +2,8 @@ const lessons = {
   1: { title: 'Introducción al RETIE', src: 'SEMANA%201/RETIE_2026__Introducci%C3%B3n.mp4' },
   2: { title: 'Riesgo y peligro', src: 'SEMANA%201/RETIE%202026%20Riesgo%20y%20Peligro.mp4' },
   3: { title: 'El accidente', src: 'SEMANA%201/RETIE_2026__El_Accidente.mp4' },
-  4: { title: 'Título 3 del RETIE', src: 'SEMANA%201/RETIE_Titulo_3.mp4' }
+  4: { title: 'Título 3 del RETIE', src: 'SEMANA%201/RETIE_Titulo_3.mp4' },
+  5: { title: 'Amenaza', src: 'SEMANA%201/RETIE_2026__Amenaza.mp4' }
 };
 
 const STORAGE_KEY = 'retie_progress';
