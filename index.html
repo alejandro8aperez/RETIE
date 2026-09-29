@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="RETIE Aula — Semana 1: fundamentos de seguridad eléctrica." />
-    <title>RETIE Aula | Semana 1</title>
+    <meta name="description" content="RETIE para Constructores — Curso completo de seguridad eléctrica según el Reglamento Técnico de Instalaciones Eléctricas." />
+    <title>RETIE para Constructores | Curso Completo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -13,30 +13,33 @@
   <body>
     <div class="noise"></div>
     <header class="topbar">
-      <a class="brand" href="#inicio" aria-label="RETIE Aula, ir al inicio"><img src="LOGOTIPO%20DE%20RETIE%20LEARNING.png" alt="RETIE Learning" style="height:176px;width:auto"></a>
+      <a class="brand" href="#inicio" aria-label="RETIE para Constructores, ir al inicio"><img src="LOGOTIPO%20DE%20RETIE%20LEARNING.png" alt="RETIE Learning" style="height:176px;width:auto"></a>
       <nav aria-label="Navegación principal">
         <a class="active" href="#inicio">Inicio</a>
-        <a href="avance.html">Avance</a>
+        <a href="#curso">Curso</a>
         <a href="#ruta">Ruta de estudio</a>
         <a href="#recursos">Recursos</a>
         <a href="#evaluacion">Evaluación</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <button class="menu-button" aria-label="Abrir navegación">☰</button>
       <a class="topbar-cta" href="#ruta">Comenzar</a>
     </header>
 
+    <div class="progress-bar"><div class="progress-fill" id="globalProgress"></div></div>
+
     <main id="inicio">
       <section class="hero wrap">
         <div class="hero-copy">
-          <div class="eyebrow"><span></span> FORMACIÓN RETIE 2026</div>
+          <div class="eyebrow"><span></span> CURSO COMPLETO · RETIE 2026</div>
           <p class="week-label">SEMANA <strong>01</strong> <i></i> FUNDAMENTOS</p>
           <h1>La seguridad empieza<br />por <em>entender</em> el riesgo.</h1>
           <p class="lede">Aprende las bases del Reglamento Técnico de Instalaciones Eléctricas y toma decisiones más seguras en cada intervención.</p>
           <div class="hero-actions">
             <a class="button primary" href="#ruta">Comenzar módulo <span>→</span></a>
-            <a class="button text-button" href="#recursos"><span class="play">▶</span> Ver introducción</a>
+            <a class="button text-button" href="#curso"><span class="play">▶</span> Ver programa</a>
           </div>
-          <div class="meta-row"><span><b>3</b> lecciones</span><span><b>45 min</b> de estudio</span><span><b>01</b> evaluación</span></div>
+          <div class="meta-row"><span><b>3</b> lecciones</span><span><b>45 min</b> de estudio</span><span><b>10</b> preguntas evaluación</span></div>
         </div>
         <div class="hero-art">
           <div class="minenergia-card">
@@ -60,7 +63,53 @@
         </div>
       </section>
 
-      <section class="progress-band"><div class="wrap progress-inner"><span>Tu progreso en Semana 1</span><div class="progress"><i></i></div><strong>0%</strong><span class="continue">Aún no has iniciado</span></div></section>
+      <section id="curso" class="wrap course-section">
+        <div class="section-heading"><div><p class="eyebrow"><span></span> PROGRAMA DEL CURSO</p><h2>Qué vas a aprender.</h2></div><p>Programa completo de formación en RETIE para constructores, con metodología práctica y evaluación continua.</p></div>
+        <div class="course-grid">
+          <div class="course-card">
+            <div class="course-icon">📋</div>
+            <h3>Objetivos de aprendizaje</h3>
+            <ul>
+              <li>Comprender el marco normativo del RETIE y su aplicación en obra</li>
+              <li>Identificar riesgos eléctricos y aplicar medidas de prevención</li>
+              <li>Conocer los requisitos de diseño, construcción e inspección</li>
+              <li>Aplicar correctamente las definiciones y conceptos clave</li>
+            </ul>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">🎯</div>
+            <h3>Metodología</h3>
+            <ul>
+              <li>Video-lecciones cortas (12-18 min) con casos reales</li>
+              <li>Infografías de consulta rápida</li>
+              <li>Glosario técnico ilustrado</li>
+              <li>Evaluación con retroalimentación inmediata</li>
+            </ul>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">📚</div>
+            <h3>Contenido</h3>
+            <ul>
+              <li>3 lecciones en video con material descargable</li>
+              <li>20+ definiciones técnicas ilustradas</li>
+              <li>Casos prácticos de aplicación en construcción</li>
+              <li>Normativa complementaria: NSR-10, NTC 2050</li>
+            </ul>
+          </div>
+          <div class="course-card">
+            <div class="course-icon">🏆</div>
+            <h3>Certificación</h3>
+            <ul>
+              <li>Evaluación final de 10 preguntas</li>
+              <li>Retroalimentación inmediata con explicaciones</li>
+              <li>Certificado de finalización descargable</li>
+              <li>Lista de verificación para obra</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="progress-band"><div class="wrap progress-inner"><span>Tu progreso en el curso</span><div class="progress"><i></i></div><strong id="progressText">0%</strong><span class="continue" id="progressLabel">Aún no has iniciado</span></div></section>
 
       <section id="ruta" class="wrap learning-section">
         <div class="section-heading"><div><p class="eyebrow"><span></span> RUTA DE APRENDIZAJE</p><h2>Domina lo esencial.</h2></div><p>Completa cada módulo en orden. Al final pondrás a prueba lo aprendido.</p></div>
@@ -93,23 +142,75 @@
         <div class="resource-grid">
           <button class="resource large-resource" data-resource="RIESGO Y PELIGRO.png"><img src="SEMANA%201/RIESGO%20Y%20PELIGRO.png" alt="Infografía comparativa de riesgo y peligro" /><span class="resource-overlay"><small>INFOGRAFÍA ESENCIAL</small><b>Riesgo y peligro</b><i>Ver recurso →</i></span></button>
           <button class="resource" data-resource="ACCIDENTE.png"><img src="SEMANA%201/ACCIDENTE.png" alt="Infografía sobre el accidente eléctrico" /><span class="resource-overlay"><small>INFOGRAFÍA</small><b>El accidente</b><i>Ver recurso →</i></span></button>
+          <button class="resource" data-resource="Amenaza.png"><img src="SEMANA%201/Amenaza.png" alt="Infografía sobre amenaza eléctrica" /><span class="resource-overlay"><small>INFOGRAFÍA</small><b>Amenaza</b><i>Ver recurso →</i></span></button>
+          <button class="resource" data-resource="RETIE_2026__Amenaza.mp4"><img src="SEMANA%201/Amenaza.png" alt="Video sobre amenaza eléctrica" /><span class="resource-overlay"><small>VIDEO</small><b>Amenaza</b><i>Ver video →</i></span></button>
+          <button class="resource" data-resource="Titulo 3.png"><img src="SEMANA%201/Titulo%203.png" alt="Título 3 del RETIE" /><span class="resource-overlay"><small>RETIE</small><b>Título 3</b><i>Ver documento →</i></span></button>
           <button class="resource definitions" data-resource="definiciones1.png"><img src="SEMANA%201/definiciones1.png" alt="Definiciones iniciales del RETIE" /><span class="resource-overlay"><small>GLOSARIO RETIE</small><b>20 conceptos para empezar</b><i>Abrir glosario →</i></span></button>
           <button class="resource definitions" data-resource="definiciones2.png"><img src="SEMANA%201/definiciones2.png" alt="Definiciones del RETIE parte 2" /><span class="resource-overlay"><small>GLOSARIO RETIE</small><b>Definiciones parte 2</b><i>Abrir glosario →</i></span></button>
           <button class="resource definitions" data-resource="definiciones3.png"><img src="SEMANA%201/definiciones3.png" alt="Definiciones del RETIE parte 3" /><span class="resource-overlay"><small>GLOSARIO RETIE</small><b>Definiciones parte 3</b><i>Abrir glosario →</i></span></button>
           <button class="resource definitions" data-resource="definiciones4.png"><img src="SEMANA%201/definiciones4.png" alt="Definiciones del RETIE parte 4" /><span class="resource-overlay"><small>GLOSARIO RETIE</small><b>Definiciones parte 4</b><i>Abrir glosario →</i></span></button>
           <button class="resource definitions" data-resource="definiciones5.png"><img src="SEMANA%201/definiciones5.png" alt="Definiciones del RETIE parte 5" /><span class="resource-overlay"><small>GLOSARIO RETIE</small><b>Definiciones parte 5</b><i>Abrir glosario →</i></span></button>
-          <button class="resource" data-resource="Amenaza.png"><img src="SEMANA%201/Amenaza.png" alt="Infografía sobre amenaza eléctrica" /><span class="resource-overlay"><small>INFOGRAFÍA</small><b>Amenaza</b><i>Ver recurso →</i></span></button>
-          <button class="resource" data-resource="RETIE_2026__Amenaza.mp4"><img src="SEMANA%201/Amenaza.png" alt="Video sobre amenaza eléctrica" /><span class="resource-overlay"><small>VIDEO</small><b>Amenaza</b><i>Ver video →</i></span></button>
-          <button class="resource" data-resource="Titulo 3.png"><img src="SEMANA%201/Titulo%203.png" alt="Título 3 del RETIE" /><span class="resource-overlay"><small>RETIE</small><b>Título 3</b><i>Ver documento →</i></span></button>
         </div>
       </section>
 
-      <section id="evaluacion" class="assessment"><div class="wrap assessment-layout"><div><p class="eyebrow"><span></span> EVALUACIÓN DE CIERRE</p><h2>¿Listo para<br />comprobarlo?</h2><p>Son 5 preguntas breves para validar los conceptos de esta semana.</p></div><div class="assessment-card"><span class="assessment-icon">✓</span><div><p>Evaluación Semana 1</p><small>5 preguntas · 10 min · Intentos ilimitados</small></div><button id="quiz-open" class="button primary">Iniciar ahora <span>→</span></button></div></div></section>
+      <section id="evaluacion" class="assessment"><div class="wrap assessment-layout"><div><p class="eyebrow"><span></span> EVALUACIÓN DE CIERRE</p><h2>¿Listo para<br />comprobarlo?</h2><p>Son 10 preguntas breves para validar los conceptos de esta semana.</p></div><div class="assessment-card"><span class="assessment-icon">✓</span><div><p>Evaluación Semana 1</p><small>10 preguntas · 15 min · Intentos ilimitados</small></div><button id="quiz-open" class="button primary">Iniciar ahora <span>→</span></button></div></div></section>
+
+      <section id="faq" class="wrap faq-section">
+        <div class="section-heading"><div><p class="eyebrow"><span></span> PREGUNTAS FRECUENTES</p><h2>Resolvemos tus dudas.</h2></div><p>Las preguntas más comunes sobre el RETIE y este curso.</p></div>
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>¿Qué es el RETIE y por qué es obligatorio?</summary>
+            <p>El RETIE (Reglamento Técnico de Instalaciones Eléctricas) es un reglamento técnico-legal obligatorio en Colombia que establece las medidas para garantizar la seguridad de las personas, la vida animal y vegetal, y la preservación del medio ambiente, minimizando los riesgos de origen eléctrico.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Quiénes deben cumplir el RETIE?</summary>
+            <p>Todas las personas naturales o jurídicas que intervengan en el diseño, construcción, ampliación, modificación, remodelación, inspección, operación o mantenimiento de instalaciones eléctricas en Colombia.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cuál es la diferencia entre riesgo y peligro?</summary>
+            <p>El peligro es la fuente o situación con potencial de daño (existe por sí mismo). El riesgo es la probabilidad de que ocurra un evento no deseado cuando una persona se expone a ese peligro.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Qué documentos necesito para certificar una instalación?</summary>
+            <p>Se requiere la Declaración de Cumplimiento y el Dictamen de Inspección emitido por un Organismo de Inspección acreditado por ONAC.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cada cuánto debo revisar mi instalación?</summary>
+            <p>La revisión periódica depende del tipo de instalación. Generalmente es anual para instalaciones comerciales e industriales, y cada 5 años para viviendas.</p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Este curso me certifica como inspector RETIE?</summary>
+            <p>No. Este curso te da los fundamentos. Para ser inspector debes certificar tus competencias ante un organismo de certificación acreditado.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="wrap download-section">
+        <div class="section-heading"><div><p class="eyebrow"><span></span> MATERIAL DESCARGABLE</p><h2>Lleva la normativa contigo.</h2></div><p>Documentos de consulta rápida para usar en obra.</p></div>
+        <div class="download-grid">
+          <a class="download-card" href="SEMANA%201/RIESGO%20Y%20PELIGRO.png" download>
+            <span class="download-icon">📄</span>
+            <div><strong>Lista de verificación de riesgo</strong><small>Infografía de consulta rápida</small></div>
+            <span class="download-arrow">↓</span>
+          </a>
+          <a class="download-card" href="SEMANA%201/definiciones1.png" download>
+            <span class="download-icon">📋</span>
+            <div><strong>Glosario RETIE — Parte 1</strong><small>20 definiciones técnicas</small></div>
+            <span class="download-arrow">↓</span>
+          </a>
+          <a class="download-card" href="SEMANA%201/Titulo%203.png" download>
+            <span class="download-icon">📑</span>
+            <div><strong>Título 3 del RETIE</strong><small>Texto normativo</small></div>
+            <span class="download-arrow">↓</span>
+          </a>
+        </div>
+      </section>
     </main>
-    <footer><div class="wrap"><a class="brand" href="#inicio"><img src="LOGOTIPO%20DE%20RETIE%20LEARNING.png" alt="RETIE Learning" style="height:176px;width:auto"></a><p>Formación para instalaciones eléctricas más seguras.</p><span>© 2026 · Semana 01</span></div></footer>
+    <footer><div class="wrap"><a class="brand" href="#inicio"><img src="LOGOTIPO%20DE%20RETIE%20LEARNING.png" alt="RETIE Learning" style="height:176px;width:auto"></a><p>Formación para instalaciones eléctricas más seguras.</p><span>© 2026 · Curso RETIE para Constructores</span></div></footer>
 
     <dialog id="media-modal" class="modal"><button class="close-modal" aria-label="Cerrar">×</button><div id="modal-content"></div></dialog>
     <dialog id="quiz-modal" class="modal quiz-modal"><button class="close-modal" aria-label="Cerrar">×</button><div id="quiz-content"></div></dialog>
+    <dialog id="certificate-modal" class="modal certificate-modal"><button class="close-modal" aria-label="Cerrar">×</button><div id="certificate-content"></div></dialog>
     <script src="script.js"></script>
   </body>
 </html>
